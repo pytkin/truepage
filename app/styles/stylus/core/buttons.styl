@@ -1,0 +1,193 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  position relative
+  display inline-block
+  margin-bottom 0 // For input.btn
+  font-weight btn-font-weight
+  text-align center
+  vertical-align middle
+  touch-action manipulation
+  cursor pointer
+  background-image none // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border none
+  white-space nowrap
+  button-size(17px, 35px, 1.6rem, 1.45)
+  user-select none
+  text-decoration none
+  text-transform uppercase
+  background-clip padding-box
+  transition color .4s cubic-bezier(.16, .53, .15, .99)
+  -webkit-font-smoothing auto
+  -moz-osx-font-smoothing auto
+  perspective 100px
+
+  &:after {
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index 0
+    padding 2px
+    cursor pointer
+    content ''
+    border 2px solid transparent
+    border-radius 10px
+    outline 1px solid transparent
+    transition all .4s cubic-bezier(.16, .53, .15, .99)
+    transform scale(1.1) rotateY(-6deg) rotateX(-5deg) translateX(-4%) translateZ(-11px)
+    transform-style preserve-3d
+  }
+  > span {
+    position relative
+    top -1px
+    z-index 2
+    cursor pointer
+  }
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      outline 0
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color btn-default-color
+    text-decoration none
+
+    &:after {
+      transform rotateY(6deg) rotateX(-5deg) translateX(4%) translateZ(-11px) scale(1.1)
+    }
+  }
+
+  &:active,
+  &.active {
+    outline 0
+    background-image none
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor cursor-disabled
+    pointer-events none // Future-proof disabling of clicks
+    opacity .65
+  }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+  button-variant(btn-default-color, btn-default-bg, btn-default-border);
+}
+.btn-white {
+  button-variant(btn-white-color, btn-white-bg, btn-white-border);
+}
+.btn-primary {
+  button-variant(btn-primary-color, btn-primary-bg, btn-primary-border);
+}
+
+// // Success appears as green
+// .btn-success {
+//   .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+// }
+// // Info appears as blue-green
+// .btn-info {
+//   .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+// }
+// // Warning appears as orange
+// .btn-warning {
+//   .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+// }
+// // Danger and error appear as red
+// .btn-danger {
+//   .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+// }
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+// .btn-link {
+//   color: @link-color;
+//   font-weight: normal;
+//   border-radius: 0;
+//
+//   &,
+//   &:active,
+//   &.active,
+//   &[disabled],
+//   fieldset[disabled] & {
+//     background-color: transparent;
+//     .box-shadow(none);
+//   }
+//   &,
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     border-color: transparent;
+//   }
+//   &:hover,
+//   &:focus {
+//     color: @link-hover-color;
+//     text-decoration: @link-hover-decoration;
+//     background-color: transparent;
+//   }
+//   &[disabled],
+//   fieldset[disabled] & {
+//     &:hover,
+//     &:focus {
+//       color: @btn-link-disabled-color;
+//       text-decoration: none;
+//     }
+//   }
+// }
+
+
+// Button Sizes
+// --------------------------------------------------
+
+// .btn-lg {
+//   button-size(15px, 20px, 1.4rem, 1.4)
+// }
+// .btn-hg {
+//   button-size(15px, 22px, 1.8rem, 1.6)
+// }
+
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display block
+  width 100%
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top 5px
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width 100%
+  }
+}

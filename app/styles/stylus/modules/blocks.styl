@@ -1,0 +1,499 @@
+//
+// Blocks
+// -------------------------------------------------- //
+
+.main-promo {
+  position relative
+  width 1270px
+  min-height 576px
+  margin 0 auto
+
+  @media (max-width: 1679px) and (min-width: 1280px) {
+    width 1120px
+
+    &:before {
+      top 61px
+      right -26px
+      width 586px
+      height 506px
+      background-size 586px 506px
+    }
+
+    .block-text {
+      padding-top 112px
+    }
+  }
+  @media (max-width: 1279px) and (min-width: 980px) {
+    width 960px
+    min-height 483px
+
+    &:before {
+      top 62px
+      right 20px
+      width 450px
+      height 390px
+      background-size 450px 390px
+    }
+    .block-text {
+      h1 {
+        font-size 5rem
+        margin-bottom 28px
+      }
+      p {
+        font-size 1.6rem
+        line-height 2.6rem
+      }
+    }
+  }
+
+  &:before {
+    position absolute
+    top -2px
+    right -6px
+    display block
+    width 686px
+    height 592px
+    content ''
+    background url(../img/static/main-bubbles.png) no-repeat 0 0/686px 592px
+  }
+
+  .block-text {
+    width 505px
+    padding-top 88px
+    text-align center
+
+    h1 {
+      margin 0 0 35px
+      font-size 6rem
+      line-height 1.2
+      text-transform uppercase
+      letter-spacing -0.01em
+    }
+    p {
+      margin-left -19px
+      font-size 1.8rem
+      font-weight 500
+
+      &:last-of-type {
+        margin-bottom 0
+      }
+    }
+  }
+}
+
+
+.main-blocks {
+  padding 20px 0
+  overflow hidden
+
+  @media (max-width: 1679px) and (min-width: 1280px) {
+    .block {
+      font-size 1.4rem
+      line-height 1.9rem
+    }
+    .block-inner {
+      padding-top 17px
+      padding-bottom 17px
+    }
+  }
+  @media (max-width: 1279px) and (min-width: 980px) {
+    .block {
+      font-size 1.6rem
+      line-height 2.6rem
+    }
+    .block-inner {
+      padding-left 60px
+      padding-right 60px
+    }
+  }
+
+  .block-inner {
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index 1
+    padding 53px 50px
+
+    h2 {
+      margin 0 0 36px
+      font-size 6rem
+      line-height 1
+      text-transform uppercase
+      letter-spacing -.01em
+    }
+    ul:not([class]) {
+      padding 0
+      margin 0
+      list-style none
+
+      li {
+        position relative
+        display block
+        padding-left 33px
+        margin-bottom 10px
+
+        &:before {
+          position absolute
+          top 50%
+          left 0
+          display block
+          width 10px
+          height 7px
+          margin-top -3px
+          color #fff
+          content ''
+          background url(../img/static/crown.svg) no-repeat 0 0/10px 7px
+        }
+      }
+    }
+  }
+  .gallery-arrows {
+    position absolute
+    bottom 28px
+    left 50%
+    width 100px
+    padding 0
+    margin 0 0 0 -50px
+    text-align center
+    list-style none
+
+    li {
+      display inline-block
+      margin 0 4px
+    }
+    a {
+      display inline-block
+      width 39px
+      height 39px
+      line-height 39px
+      color #ffa300
+    }
+    .icon,
+    [data-icon] {
+      vertical-align -8px
+    }
+  }
+  .block {
+    position relative
+    z-index 2
+    float left
+    width 25%
+    padding-bottom 25%
+    font-size 1.6rem
+    line-height 2.6rem
+
+    @media (max-width: 1279px) and (min-width: 980px) {
+      width 50%
+      padding-bottom 50%
+
+      .block-inner {
+        display -webkit-flex
+        display flex
+        flex-direction column
+        flex-wrap nowrap
+        justify-content center
+        align-items flex-start
+      }
+      &.is-half-screen {
+        width 100%
+      }
+      &.text-center {
+        .block-inner {
+          align-items center
+        }
+      }
+    }
+
+    &.is-half-screen {
+      width 50%
+    }
+    &.is-bg-white {
+      background-color #fff
+
+      .block-inner {
+        h2,
+        .icon:not(.icon-prev-arrow):not(.icon-next-arrow),
+        .reviewer-name,
+        .reviewer-position  {
+          color brand-secondary
+        }
+        p {
+          color #5a5f73
+        }
+        .icon-prev-arrow,
+        .icon-next-arrow {
+          color brand-primary
+        }
+      }
+    }
+    &.is-bg-primary {
+      background-color brand-primary
+    }
+    &.is-bg-secondary {
+      background-color brand-secondary
+
+      .icon-prev-arrow,
+      .icon-next-arrow {
+        color #fff
+      }
+    }
+    &.is-video,
+    &.is-photo,
+    &.is-texts {
+      .icon,
+      [data-icon] {
+        margin-top -7px
+        margin-bottom 15px
+      }
+      .block-inner {
+        padding-right 40px
+        padding-left 40px
+      }
+
+      @media (max-width: 1679px) and (min-width: 1280px) {
+        padding-right 50px
+        padding-left 50px
+      }
+      @media (max-width: 1279px) and (min-width: 980px) {
+        .icon,
+        [data-icon] {
+          margin-bottom 25px
+        }
+      }
+    }
+    &.is-contacts {
+      @media (max-width: 1679px) and (min-width: 1280px) {
+        .block-inner {
+          padding-right 25px
+          padding-left 25px
+        }
+        .phone-number {
+          font-size 2.4rem
+        }
+        [data-type="call-request"] {
+          margin -19px 0 10px
+        }
+        [href^="mailto"] {
+          margin-bottom 8px
+        }
+      }
+      @media (max-width: 1279px) and (min-width: 980px) {
+        [data-type="call-request"] {
+          margin -12px 0 -12px
+        }
+      }
+      .block-inner {
+        padding-right 30px
+        padding-left 30px
+      }
+      .icon,
+      [data-icon] {
+        margin-right 6px
+      }
+      .phone-number {
+        display block
+        margin -22px 0 37px
+        font-family headings-font-family
+        font-size 3.6rem
+        line-height 1
+        text-transform uppercase
+      }
+      [data-type="call-request"] {
+        display inline-block
+        margin -22px 0 8px
+      }
+      [href^="mailto"] {
+        display inline-block
+        margin-bottom 12px
+        text-decoration none
+
+        > span {
+          border-bottom 2px solid #ffbf4d
+        }
+        &:hover {
+          color #ffeccc
+
+          > span {
+            border-bottom-color transparent
+          }
+        }
+      }
+      .look-at-map {
+        text-decoration none
+
+        > span {
+          border-bottom: 2px solid #ffbf4d
+        }
+        &:hover {
+          color brand-primary
+
+          > span {
+            border-bottom-color transparent
+          }
+        }
+      }
+    }
+    &.is-reviews {
+      @media (max-width: 1679px) and (min-width: 1280px) {
+        .block-inner {
+          padding-right 35px
+          padding-left 35px
+
+          h2 {
+            margin-bottom 28px
+          }
+        }
+      }
+    }
+    &.is-clients {
+      @media (max-width: 1679px) and (min-width: 1280px) {
+        .block-inner {
+          padding-right 20px
+          padding-left 20px
+
+          h2 {
+            margin-bottom 18px
+          }
+        }
+      }
+    }
+  }
+}
+
+.reviews-gallery {
+  margin-top -10px
+
+  @media (max-width: 1679px) and (min-width: 1280px) {
+    .reviewer-position {
+      margin-bottom 10px
+    }
+    .review-text {
+      min-height 115px
+      max-height 115px
+      font-size 1.4rem
+      line-height 1.9rem
+    }
+    .flickity-prev-next-button {
+      bottom -27px
+    }
+  }
+  @media (max-width: 1279px) and (min-width: 980px) {
+    margin-top 0
+    width 100%
+    min-height 25vw
+
+    .reviewer-position {
+      margin-bottom 16px
+    }
+  }
+
+  .reviews-gallery:not(.flickity-enabled) .gallery-cell ~ .gallery-cell {
+    visibility hidden
+  }
+  .reviewer-name {
+    font-size 2.4rem
+    font-family headings-font-family
+    text-transform uppercase
+    letter-spacing -.01em
+  }
+  .reviewer-position {
+    margin-bottom 10px
+    font-size 1.8rem
+    font-family headings-font-family
+    text-transform uppercase
+    letter-spacing -.01em
+  }
+  .review-text {
+    min-height 130px
+    max-height 130px
+
+    p:last-child {
+      margin-bottom 0
+    }
+  }
+  .gallery-cell {
+    width 100%
+  }
+  .flickity-prev-next-button {
+    top auto
+    bottom -37px
+    width 36px
+    height 36px
+    padding 0
+    cursor pointer
+    background-color transparent
+
+    > svg {
+      cursor pointer
+
+      .arrow {
+        fill brand-primary
+      }
+    }
+
+    &.previous {
+      left 35%
+    }
+    &.next {
+      right 35%
+    }
+  }
+}
+
+.clients-gallery {
+  @media (max-width: 1279px) and (min-width: 980px) {
+    width 100%
+    min-height 25vw
+  }
+
+  &:not(.flickity-enabled) .gallery-cell ~ .gallery-cell {
+    visibility hidden
+  }
+  .gallery-cell {
+    width 100%
+  }
+  .clients-group {
+    padding 0
+    margin 0
+    list-style none
+
+    li {
+      position relative
+      display inline-block
+      width 49%
+      padding-top 25%
+    }
+    a {
+      position absolute
+      top 50%
+      left 50%
+      display inline-block
+      transform translateX(-50%) translateY(-50%)
+    }
+  }
+  .flickity-prev-next-button {
+    top auto
+    bottom -37px
+    width 36px
+    height 36px
+    padding 0
+    cursor pointer
+    background-color transparent
+
+    &.previous {
+      left 35%
+    }
+    &.next {
+      right 35%
+    }
+    > svg {
+      cursor pointer
+
+      .arrow {
+        fill #fff
+      }
+    }
+  }
+}
