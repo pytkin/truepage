@@ -1,0 +1,141 @@
+//
+// Modals
+// -------------------------------------------------- //
+
+
+// Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.modal {
+  display none
+  overflow hidden
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index zindex-modal
+  -webkit-overflow-scrolling touch
+  outline 0
+
+  &.fade .modal-dialog {
+    transform translateY(-25%)
+    transition transform .3s ease-out
+  }
+  &.in .modal-dialog {
+    transform translateY(0)
+  }
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position absolute
+  top 0
+  left 0
+  height auto
+  min-height 100%
+  right 0
+  display flex
+  flex-direction column
+  flex-wrap nowrap
+  align-items center
+  justify-content center
+}
+
+// Actual modal
+.modal-content {
+  position relative
+  background-clip padding-box
+  outline 0
+
+  .close-link {
+    position absolute
+    right 8px
+    top 8px
+    display inline-block
+    line-height 1.3rem
+    color #fff
+
+    &:hover {
+      color brand-secondary
+    }
+  }
+}
+
+// Modal background
+.modal-backdrop {
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index zindex-modal-backdrop
+  background url(../img/static/body-back.jpg) no-repeat 0 50%/cover body-bg
+  // Fade for backdrop
+  &.fade { opacity: 0; }
+  &.in { opacity: modal-backdrop-opacity; }
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+.mobile-nav-modal {
+  top 84px
+  border-top 1px solid rgba(255,255,255,.1)
+
+  .modal-dialog {
+    justify-content flex-start
+    align-items flex-start
+  }
+  .modal-content {
+    width 100%
+    text-align center
+    padding-bottom 50px
+  }
+  .mobile-nav-list {
+    list-style none
+    padding 0
+    margin 0 0 25px
+
+    li {
+      display block
+    }
+    a {
+      display block
+      color #fff
+      font-size 1.8rem
+      line-height 3.6rem
+      height 78px
+      border-bottom 1px solid rgba(255,255,255,.1)
+      font-weight bold
+      padding 20px 0
+      text-decoration none
+      text-transform uppercase
+    }
+    .icon,
+    [data-icon] {
+      color brand-primary
+      margin-right 10px
+      vertical-align -8px
+    }
+  }
+}

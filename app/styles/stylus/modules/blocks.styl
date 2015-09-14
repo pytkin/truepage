@@ -8,19 +8,37 @@
   min-height 576px
   margin 0 auto
 
-  @media (max-width: 1679px) and (min-width: 1280px) {
-    width 1120px
-
-    &:before {
-      top 61px
-      right -26px
-      width 586px
-      height 506px
-      background-size 586px 506px
-    }
+  @media (max-width: 979px) {
+    width 100%
+    min-height 353px
 
     .block-text {
-      padding-top 112px
+      width 100%
+      padding-top 12px
+      padding-left  15px
+      padding-right 15px
+
+      h1 {
+        font-size 3rem
+        margin-bottom 13px
+      }
+      p {
+        margin-left 0
+        font-size 1.2rem
+        line-height 2.2rem
+      }
+    }
+    &:before {
+      position relative
+      width 60%
+      height auto
+      background-size 100%
+      top 8px
+      left 50%
+      transform translateX(-50%)
+      min-width 189px
+      min-height 163px
+      padding-bottom 50%
     }
   }
   @media (max-width: 1279px) and (min-width: 980px) {
@@ -45,6 +63,22 @@
       }
     }
   }
+  @media (max-width: 1679px) and (min-width: 1280px) {
+    width 1120px
+
+    &:before {
+      top 61px
+      right -26px
+      width 586px
+      height 506px
+      background-size 586px 506px
+    }
+
+    .block-text {
+      padding-top 112px
+    }
+  }
+
 
   &:before {
     position absolute
@@ -81,11 +115,49 @@
   }
 }
 
-
 .main-blocks {
   padding 20px 0
   overflow hidden
 
+  @media (max-width: 979px) {
+    .block {
+      width 100%
+      padding-bottom 0
+      font-size 1.2rem
+      line-height 2.6rem
+
+      &.is-half-screen {
+        width 100%
+      }
+      &.text-center {
+        .block-inner {
+          align-items center
+        }
+      }
+      &.is-contacts {
+        .phone-number {
+          margin-top -2px
+        }
+        [data-type="call-request"] {
+          margin -12px 0
+        }
+      }
+    }
+    .block-inner {
+      position relative
+      display flex
+      flex-wrap nowrap
+      flex-direction column
+      justify-content center
+      padding 35px 22px
+      min-height 100vw
+
+      h2 {
+        font-size 3rem
+        margin-bottom 18px
+      }
+    }
+  }
   @media (max-width: 1679px) and (min-width: 1280px) {
     .block {
       font-size 1.4rem
@@ -133,6 +205,10 @@
         display block
         padding-left 33px
         margin-bottom 10px
+
+        @media (max-width: 979px) {
+          margin-bottom 3px
+        }
 
         &:before {
           position absolute
@@ -262,6 +338,12 @@
           margin-bottom 25px
         }
       }
+      @media (max-width: 979px) {
+        .icon,
+        [data-icon] {
+          margin-top 3px
+        }
+      }
     }
     &.is-contacts {
       @media (max-width: 1679px) and (min-width: 1280px) {
@@ -365,6 +447,10 @@
 .reviews-gallery {
   margin-top -10px
 
+  @media (max-width: 979px) {
+    width 100%
+    margin-top 0
+  }
   @media (max-width: 1679px) and (min-width: 1280px) {
     .reviewer-position {
       margin-bottom 10px
@@ -443,6 +529,10 @@
 }
 
 .clients-gallery {
+  @media (max-width: 979px) {
+    width 100%
+    min-height 50vw
+  }
   @media (max-width: 1279px) and (min-width: 980px) {
     width 100%
     min-height 25vw

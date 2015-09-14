@@ -16,6 +16,21 @@
 		<script src="js/icon-loader.js"></script>
 	</head>
 	<body>
+		<div class="modal fade mobile-nav-modal" id="mobile-nav-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<ul class="mobile-nav-list">
+						<li><a href="#" rel="nofollow"><span data-icon="icon-video"></span>Видео</a></li>
+						<li><a href="#" rel="nofollow"><span data-icon="icon-photo"></span>Фото</a></li>
+						<li><a href="#" rel="nofollow"><span data-icon="icon-texts"></span>Тексты</a></li>
+						<li><a href="#" rel="nofollow"><span data-icon="icon-eye"></span>Кейсы</a></li>
+						<li><a href="#" rel="nofollow"><span data-icon="icon-clients"></span>Клиенты</a></li>
+						<li><a href="#" rel="nofollow"><span data-icon="icon-contacts"></span>Контакты</a></li>
+					</ul>
+					<a href="#" class="btn btn-default request-btn" rel="nofollow"><span>Закажи сейчас</span></a>
+				</div>
+			</div>
+		</div>
 		<div class="site-wrapper">
 			<header class="site-header">
 				<div class="logo"></div>
@@ -29,7 +44,12 @@
 						<li><span data-icon="icon-contacts"></span><a href="#">Контакты</a></li>
 					</ul>
 				</nav>
-				<a href="#" class="btn btn-default request-btn"><span>Закажи сейчас</span></a>
+				<a href="#" class="btn btn-default request-btn" rel="nofollow"><span>Закажи сейчас</span></a>
+				<a href="#" class="mobile-nav-handler" data-toggle="modal" data-target="#mobile-nav-modal" rel="nofollow">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</a>
 			</header>
 			<main class="site-content">
 				<div class="main-promo">
@@ -161,6 +181,8 @@
 		<!-- build:js js/common.js -->
 		<script src="/bower_components/jquery/dist/jquery.js"></script>
 		<script src="/bower_components/flickity/dist/flickity.pkgd.js"></script>
+		<script src="/bower_components/bootstrap/js/transition.js"></script>
+		<script src="/bower_components/bootstrap/js/modal.js"></script>
 		<!-- endbuild -->
 
 		<!-- build:js js/main.js -->
