@@ -587,3 +587,426 @@
     }
   }
 }
+
+.cases-gallery {
+  position relative
+
+  .reviews-gallery:not(.flickity-enabled) .gallery-cell ~ .gallery-cell {
+    visibility hidden
+  }
+  .gallery-cell {
+    width 100%
+  }
+  .gallery-arrows {
+    position absolute
+    bottom 28px
+    left 50%
+    width 100px
+    padding 0
+    margin 0 0 0 -50px
+    text-align center
+    list-style none
+
+    li {
+      display inline-block
+      margin 0 4px
+    }
+    a {
+      display inline-block
+      width 39px
+      height 39px
+      line-height 39px
+      color #ffa300
+    }
+    .icon,
+    [data-icon] {
+      vertical-align -8px
+    }
+  }
+}
+
+.inner-promo {
+  position relative
+  min-height 327px
+  text-align center
+  text-transform uppercase
+  padding-top 32px
+
+  @media (max-width: 840px) {
+    min-height 125px
+
+    h1 {
+      font-size 6rem
+    }
+    &:before {
+      display none
+    }
+    .category-nav {
+      display none
+    }
+  }
+
+  &.is-contacts {
+    min-height 260px
+
+    &:before {
+      width 811px
+      height 177px
+      background-image url(../img/static/inner-promo-contacts-bg.png)
+    }
+  }
+
+  h1 {
+    font-size 12rem
+    letter-spacing -0.01em
+    margin 0
+  }
+  &:before {
+    content ''
+    display block
+    position absolute
+    background url(../img/static/inner-promo-bg.png) no-repeat center/100% transparent;
+    top 12px
+    left 50%
+    width 725px
+    height 180px
+    transform translateX(-50%)
+  }
+  .category-nav {
+    position absolute
+    list-style none
+    margin 0
+    padding 0
+    z-index 3
+    width 100%
+    left 0
+    bottom 72px
+
+    li {
+      display inline-block
+      margin 0 10px
+
+      &.active {
+        a {
+          color brand-primary
+
+          &:after {
+            background-color #fff
+          }
+        }
+      }
+      &:nth-child(1) {
+        a {
+          &:after {
+            transform scale(1.1) rotateY(-13deg) rotateX(16deg) translateY(-6px) translateX(-8%) translateZ(-11px)
+          }
+          &:hover {
+            &:after {
+              transform scale(1.1) rotateY(7deg) rotateX(16deg) translateY(-6px) translateX(2%) translateZ(-11px)
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        a {
+          &:after {
+            transform scale(1.1) rotateY(-16deg) rotateX(-10deg) translateY(1px) translateX(-9%) translateZ(-11px)
+          }
+          &:hover {
+            &:after {
+              transform scale(1.1) rotateY(4deg) rotateX(-10deg) translateY(1px) translateX(2%) translateZ(-11px)
+            }
+          }
+        }
+      }
+      &:nth-child(3) {
+        a {
+          &:after {
+            transform scale(1.1) rotateY(4deg) rotateX(10deg) translateY(-4px) translateX(1%) translateZ(-11px)
+          }
+          &:hover {
+            &:after {
+              transform scale(1.1) rotateY(-11deg) rotateX(-8deg) translateY(-1px) translateX(-5%) translateZ(0)
+            }
+          }
+        }
+      }
+    }
+    a {
+      padding 6px 20px
+      line-height 1.45
+      position relative
+      display inline-block
+      vertical-align middle
+      touch-action manipulation
+      cursor pointer
+      text-align center
+      user-select none
+      text-decoration none
+      text-transform uppercase
+      background-clip padding-box
+      transition color .4s cubic-bezier(.27,.65,.14,.8)
+      -webkit-font-smoothing auto
+      -moz-osx-font-smoothing auto
+      perspective 100px
+      min-width 120px
+      font-size 2.4rem
+      font-family headings-font-family
+
+      &:after {
+        position absolute
+        top 0
+        right 0
+        bottom 0
+        left 0
+        z-index 0
+        padding 2px
+        cursor pointer
+        content ''
+        border 2px solid transparent
+        outline 1px solid transparent
+        transition all .4s cubic-bezier(.16, .53, .15, .99)
+        transform scale(1.1) rotateY(-6deg) rotateX(-5deg) translateX(-4%) translateZ(-11px)
+        transform-style preserve-3d
+        will-change transform, color
+        background-color brand-primary
+      }
+      > span {
+        position relative
+        top -3px
+        z-index 2
+        cursor pointer
+      }
+
+      &:hover {
+        color #fff
+
+        &:after {
+          transform rotateY(6deg) rotateX(-5deg) translateX(4%) translateZ(-11px) scale(1.1)
+        }
+      }
+    }
+  }
+}
+
+.inner-blocks {
+  margin-bottom 20px
+  display none
+  clearfix()
+
+  @media (min-width: 768px) {
+    display block
+  }
+
+  &.is-clients {
+    .block:nth-child(odd) {
+      background-color #f6f6f6
+    }
+    @media (min-width: 1280px) {
+      .block:nth-child(odd) {
+        background-color #fff
+      }
+      .block:nth-child(-2n+4),
+      .block:nth-child(4) ~ .block:nth-child(-2n+7),
+      .block:nth-child(8) ~ .block:nth-child(-2n+12),
+      .block:nth-child(12) ~ .block:nth-child(-2n+15),
+      .block:nth-child(16) ~ .block:nth-child(-2n+20),
+      .block:nth-child(20) ~ .block:nth-child(-2n+23),
+      .block:nth-child(24) ~ .block:nth-child(-2n+28),
+      .block:nth-child(28) ~ .block:nth-child(-2n+31) {
+          background-color #f6f6f6
+      }
+    }
+  }
+
+  .block {
+    cursor pointer
+    position relative
+    width 25%
+    padding-bottom 25%
+    float left
+    background-color #fff
+
+    @media (max-width: 1280px) {
+      width 33.33334%
+      padding-bottom 33.33334%
+    }
+
+    &:hover {
+      .block-inner {
+        &:before {
+          opacity .4
+        }
+        .icon,
+        [data-icon] {
+          opacity 1
+        }
+      }
+    }
+
+    .block-inner {
+      position absolute
+      top 0
+      left 0
+      display flex
+      flex-wrap nowrap
+      flex-direction column
+      justify-content center
+      align-items center
+      padding 35px
+      width 100%
+      height 100%
+
+      img {
+        display block
+        max-width calc(100% - 70px)
+        max-height calc(100% - 70px)
+      }
+      .icon,
+      [data-icon] {
+        position absolute
+        top 50%
+        left 50%
+        transform translateX(-50%) translateY(-50%)
+        z-index 3
+        width 37px
+        height 35px
+        opacity 0
+        transition opacity .3s ease-in-out
+      }
+      &:before {
+        content ''
+        position absolute
+        top 0
+        left 0
+        right 0
+        bottom 0
+        opacity 0
+        z-index 2
+        background-color #215994
+        transition opacity .3s ease-in-out
+      }
+    }
+  }
+}
+
+.mobile-inner-blocks {
+  display block
+
+  @media (min-width: 768px) {
+    display none
+  }
+
+  .block {
+    cursor pointer
+    position relative
+    width 100%
+    padding-bottom 100vw
+    float left
+    background-color #fff
+
+    .block-inner {
+      position absolute
+      top 0
+      left 0
+      display flex
+      flex-wrap nowrap
+      flex-direction column
+      justify-content center
+      align-items center
+      padding 35px
+      width 100%
+      height 100%
+
+      img {
+        display block
+        max-width calc(100% - 70px)
+        max-height calc(100% - 70px)
+      }
+    }
+  }
+}
+
+.contacts {
+  position relative
+  margin-bottom 20px
+
+  .map-holder {
+    height 802px
+
+    @media (max-width: 768px) {
+      height 300px
+    }
+  }
+  .contacts-map-overlay {
+    position absolute
+    top 0
+    left 50%
+    transform translateX(-50%)
+    width 400px
+    height 318px
+    background-color rgba(255,163,0,.9)
+    z-index 2
+    padding 50px 35px 0
+    text-align center
+    font-size 1.6rem
+    line-height 2.6rem
+
+    &:after {
+      content ''
+      position absolute
+      bottom -22px
+      left 50%
+      margin-left -22px
+      width 0
+      height 0
+      border-style solid
+      border-width 22px 22px 0 22px
+      border-color rgba(255,163,0,.9) transparent transparent transparent
+      transform:rotate(360deg)
+    }
+
+    @media (max-width: 768px) {
+      height auto
+      padding 35px
+      position relative
+      left 0
+      transform none
+      width 100%
+      background-color brand-primary
+    }
+
+    .phone-number {
+      display block
+      margin 0 0 18px
+      font-family headings-font-family
+      font-size 3.6rem
+      line-height 1
+      text-transform uppercase
+    }
+    [data-type="call-request"] {
+      display inline-block
+      margin 0 0 8px
+
+      &:after {
+        box-shadow 0 3px 6px rgba(0,0,0,.2)
+      }
+    }
+    [href^="mailto"] {
+      display inline-block
+      margin-bottom 12px
+      text-decoration none
+
+      > span {
+        border-bottom 2px solid #ffbf4d
+      }
+      &:hover {
+        color #ffeccc
+
+        > span {
+          border-bottom-color transparent
+        }
+      }
+    }
+  }
+}
