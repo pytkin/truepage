@@ -614,7 +614,7 @@
   padding-top 32px
 
   @media (max-width: 840px) {
-    min-height 125px
+    min-height 125px !important
 
     h1 {
       font-size 6rem
@@ -759,7 +759,8 @@
         cursor pointer
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color #fff
 
         &:after {
@@ -885,6 +886,24 @@
 
     &:last-of-type {
       padding-bottom 40px
+    }
+    &.is-clients-photos {
+      .block-inner {
+        min-height 100vw
+      }
+      .mobile-clients-gallery {
+        width 100%
+
+        .gallery-cell {
+          width 100%
+          text-align center
+        }
+      }
+      .flickity-enabled.is-draggable .flickity-viewport {
+        min-height 100%
+        width 100%
+      }
+      // .mobile- {}
     }
 
     .block-inner {
