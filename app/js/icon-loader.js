@@ -24,7 +24,7 @@
 		}
 	}
 
-	function renderIcons(inst) {
+	var renderIcons = function (inst) {
 		var icons = inst ? inst.querySelectorAll('[data-icon]') : document.querySelectorAll('[data-icon]');
 
 		for (var i = 0; i < icons.length; i++) {
@@ -38,7 +38,7 @@
 			currentIcon.insertAdjacentHTML('beforebegin', icon(name, options));
 			currentIcon.parentNode.removeChild(currentIcon);
 		}
-	}
+	};
 	function renderSprite(path) {
 		var file = (path !== '' && typeof path !== 'undefined') ? path : 'img/sprites/svg_sprite.svg';
 		var revision = 1442902581;
@@ -89,5 +89,7 @@
 		renderSprite();
 		renderIcons();
 	});
+
+	window.renderIcons = renderIcons;
 
 })(window.document);

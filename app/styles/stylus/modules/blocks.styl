@@ -120,6 +120,9 @@
   overflow hidden
 
   @media (max-width: 979px) {
+    width 320px
+    margin 0 auto
+
     .block {
       width 100%
       padding-bottom 0
@@ -150,7 +153,7 @@
       flex-direction column
       justify-content center
       padding 35px 22px
-      min-height 100vw
+      min-height 320px
 
       h2 {
         font-size 3rem
@@ -591,6 +594,8 @@
 .cases-gallery {
   position relative
   width 100%
+  height 745px
+  overflow hidden
 
   .reviews-gallery:not(.flickity-enabled) .gallery-cell ~ .gallery-cell {
     visibility hidden
@@ -627,7 +632,7 @@
     }
   }
 
-  &.is-contacts {
+  &.is-nav-off {
     min-height 260px
 
     &:before {
@@ -781,6 +786,17 @@
   }
 
   &.is-clients {
+    .block {
+      cursor default
+
+      &:hover {
+        .block-inner {
+          &:before {
+            opacity 0
+          }
+        }
+      }
+    }
     .block:nth-child(odd) {
       background-color #f6f6f6
     }
@@ -1061,4 +1077,9 @@
       }
     }
   }
+}
+
+.inner-fullsize-context {
+  background-color #fff
+  width 100%
 }

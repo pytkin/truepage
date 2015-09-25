@@ -77,10 +77,18 @@
   bottom 0
   left 0
   z-index zindex-modal-backdrop
-  background url(../img/static/body-back.jpg) no-repeat 0 50%/cover body-bg
+  background-color #19488e
   // Fade for backdrop
   &.fade { opacity: 0; }
   &.in { opacity: modal-backdrop-opacity; }
+
+  &.is-mobile-nav-modal-backdrop {
+    background url(../img/static/body-back.jpg) no-repeat 0 50%/cover body-bg
+  }
+  &.is-cases-modal-backdrop,
+  &.is-reviews-modal-backdrop {
+    z-index 1290
+  }
 }
 
 // Modal body
@@ -136,6 +144,151 @@
       color brand-primary
       margin-right 10px
       vertical-align -8px
+    }
+  }
+}
+
+.cases-modal,
+.reviews-modal {
+  z-index 1290
+
+  .modal-content {
+    width 100%
+    max-width 1200px
+    margin 30px
+    min-height 800px
+    padding 30px 34px
+    background-color #fff
+    box-shadow 5px 6px 0 0 #bac8dd, 10px 11px 0 0 rgba(186,200,221,.5)
+
+    @media (max-width: 1260px) {
+      max-width 960px
+    }
+    @media (max-width: 1000px) {
+      max-width 960px
+    }
+    @media (max-width: 980px) {
+      margin 0
+    }
+  }
+  .gallery-cell {
+    width 100%
+    position absolute
+    left 100%
+
+    &:first-child {
+      left 0
+    }
+    .gallery-image-holder {
+      width 100%
+      height 700px
+      margin-bottom 15px
+      display flex
+      justify-content center
+      align-items center
+      flex-direction row
+      flex-wrap nowrap
+
+      img {
+        flex-grow 0
+        flex-shrink 0
+        display block
+        max-width 100%
+        max-height 100%
+        height auto
+      }
+    }
+    .gallery-image-caption {
+      text-align center
+      font-weight 300
+      font-size 1.6rem
+      line-height 2rem
+      color #666973
+      margin-bottom 0
+    }
+  }
+  .close {
+    position absolute
+    top 30px
+    right 34px
+    padding 0
+    border 0
+    background-image none
+    background-color transparent
+    width 24px
+    height 24px
+    color brand-primary
+    z-index 2
+
+    &:focus {
+      outline 0
+    }
+    &:hover {
+      color brand-secondary
+    }
+  }
+  .gallery-prev-btn,
+  .gallery-next-btn {
+    color brand-primary
+    display block
+    position absolute
+    top 50%
+    left 40px
+    z-index 3
+
+    .icon,
+    [data-icon] {
+      width 18px
+      height 27px
+    }
+
+    &:hover {
+      color brand-secondary
+    }
+  }
+  .gallery-next-btn {
+    right 40px
+    left auto
+  }
+}
+
+.reviews-modal {
+  .gallery-prev-btn,
+  .gallery-next-btn {
+    top 65%
+  }
+  .modal-content {
+    min-height 620px
+    color #215994
+    font-size 1.8rem
+    line-height 3rem
+    text-align center
+  }
+  .reviewer-company-logo {
+    padding 20px 0 0
+    margin-bottom 35px
+  }
+  .reviewer-position {
+    display block
+    margin-bottom 35px
+  }
+  .reviewer-name {
+    font-size 3.6rem
+    text-transform uppercase
+    font-family headings-font-family
+    letter-spacing -0.01em
+    margin-bottom 20px
+  }
+  .review-text {
+    width 65%
+    margin 0 auto
+
+    p {
+      margin-bottom 35px
+
+      &:last-child {
+        margin-bottom 0
+      }
     }
   }
 }

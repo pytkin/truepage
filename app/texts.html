@@ -9,7 +9,10 @@
 		<link rel="icon" href="favicon.ico">
 		<title>TRUE Content</title>
 
+		<!-- build:css css/main.css -->
+		<link rel="stylesheet" href="/bower_components/normalize.css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
+		<!-- endbuild -->
 		<script src="js/icon-loader.js"></script>
 	</head>
 	<body>
@@ -20,9 +23,9 @@
 						<li><a href="#" rel="nofollow"><span data-icon="icon-video"></span>Видео</a></li>
 						<li><a href="#" rel="nofollow"><span data-icon="icon-photo"></span>Фото</a></li>
 						<li><a href="#" rel="nofollow"><span data-icon="icon-texts"></span>Тексты</a></li>
-						<li><a href="cases.html" rel="nofollow"><span data-icon="icon-eye"></span>Кейсы</a></li>
-						<li><a href="clients.html" rel="nofollow"><span data-icon="icon-clients"></span>Клиенты</a></li>
-						<li><a href="contacts.html" rel="nofollow"><span data-icon="icon-contacts"></span>Контакты</a></li>
+						<li><a href="#" rel="nofollow"><span data-icon="icon-eye"></span>Кейсы</a></li>
+						<li><a href="#" rel="nofollow"><span data-icon="icon-clients"></span>Клиенты</a></li>
+						<li><a href="#" rel="nofollow"><span data-icon="icon-contacts"></span>Контакты</a></li>
 					</ul>
 					<a href="#" class="btn btn-default request-btn" rel="nofollow"><span>Закажи сейчас</span></a>
 				</div>
@@ -50,18 +53,12 @@
 			</header>
 			<main class="site-content">
 				<section class="inner-promo is-nav-off">
-					<h1>Контакты</h1>
-				</section>
-				<section class="contacts">
-					<div class="contacts-map-overlay">
-						<span class="phone-number">+7(495)955-765-96</span>
-						<a href="#" class="btn btn-white" data-type="call-request"><span>Мы перезвоним</span></a><br>
-						<a href="mailto:info@videobaker.ru"><span>info@videobaker.ru</span></a>
-						<p>Москва, Дербеневская набережная, д.7, стр. 9. Деловой квартал "Новоспасский Двор".</p>
-					</div>
-					<div class="map-holder" id="contacts-map"></div>
+					<h1>Тексты</h1>
 				</section>
 			</main>
+			<section class="inner-fullsize-context">
+
+			</section>
 			<footer class="site-footer">
 				<div class="footer-content-wrap">
 					<a href="index.html" class="small-logo"></a>
@@ -76,10 +73,15 @@
 			</footer>
 		</div><!-- /.site-wrapper -->
 
-		<script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=true"></script>
+		<!-- build:js js/common.js -->
+		<script src="/bower_components/jquery/dist/jquery.js"></script>
+		<script src="/bower_components/flickity/dist/flickity.pkgd.js"></script>
+		<script src="/bower_components/bootstrap/js/transition.js"></script>
+		<script src="js/modal.js"></script>
+		<!-- endbuild -->
 
-		<script src="js/common.js"></script>
-
-		<script src="js/main.js"></script>
+		<!-- build:js js/main.js -->
+		<script src="js/app.js"></script>
+		<!-- endbuild -->
 	</body>
 </html>
