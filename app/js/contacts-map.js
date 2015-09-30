@@ -27,11 +27,12 @@ function contactsMapInit() {
 	});
 }
 
-
-// Add event listeners
-google.maps.event.addDomListener(window, 'load', contactsMapInit);
-google.maps.event.addDomListener(window, 'resize', function () {
-	var center = map.getCenter();
-	google.maps.event.trigger(map, 'resize');
-	map.setCenter(center);
-});
+if (typeof google !== 'undefined') {
+	// Add event listeners
+	google.maps.event.addDomListener(window, 'load', contactsMapInit);
+	google.maps.event.addDomListener(window, 'resize', function () {
+		var center = map.getCenter();
+		google.maps.event.trigger(map, 'resize');
+		map.setCenter(center);
+	});
+}

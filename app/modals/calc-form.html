@@ -1,0 +1,63 @@
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	<span data-icon="icon-cross"></span>
+</button>
+<form action="#">
+	<legend>Расчитайте примерную стоимость заказа</legend>
+	<div class="form-group">
+		<label for="_id-calc-form--counter-field">Хочу снять</label>
+		<input type="text" class="form-control is-videos-counter" id="_id-calc-form--counter-field" name="calc-form--counter-field">
+		<span class="helper">роликов</span>
+	</div>
+	<div class="form-group">
+		<label for="_id-calc-form--place-radio-01">Где снимать?</label>
+		<label for="_id-calc-form--place-radio-01" class="radio-inline">
+			<input type="radio" name="calc-form--place-radio" id="_id-calc-form--place-radio-01" checked>
+			<span>в студии</span>
+		</label>
+		<label for="_id-calc-form--place-radio-02" class="radio-inline">
+			<input type="radio" name="calc-form--place-radio" id="_id-calc-form--place-radio-02">
+			<span>выезд</span>
+		</label>
+	</div>
+	<div class="form-group">
+		<label for="_id-calc-form--target-radio-01">Мои товары</label>
+		<label for="_id-calc-form--target-radio-01" class="radio-inline">
+			<input type="radio" name="calc-form--target-radio" id="_id-calc-form--target-radio-01" checked>
+			<span>Простые</span>
+		</label>
+		<label for="_id-calc-form--target-radio-02" class="radio-inline">
+			<input type="radio" name="calc-form--target-radio" id="_id-calc-form--target-radio-02">
+			<span>Технически сложные</span>
+		</label>
+	</div>
+	<div class="form-group">
+		<label for="_id-calc-form--actor-radio-01">Нужен актер?</label>
+		<label for="_id-calc-form--actor-radio-01" class="radio-inline">
+			<input type="radio" name="calc-form--actor-radio" id="_id-calc-form--actor-radio-01" checked>
+			<span>Да</span>
+		</label>
+		<label for="_id-calc-form--actor-radio-02" class="radio-inline">
+			<input type="radio" name="calc-form--actor-radio" id="_id-calc-form--actor-radio-02">
+			<span>Нет</span>
+		</label>
+	</div>
+	<dl class="calculated-results">
+		<dt><span data-icon="icon-alarmclock-bubble"></span> Рекомендованый хронометраж ролика</dt>
+		<dd>20 секунд</dd>
+		<dt><span data-icon="icon-tag-bubble"></span> Предварительная стоимость</dt>
+		<dd>20 000 р.</dd>
+	</dl>
+	<div class="form-group">
+		<label for="_id-calc-form--name-field">Ваше имя</label>
+		<input type="text" class="form-control" name="calc-form--name-field" id="_id-calc-form--name-field">
+		<span class="message">без этого никак</span>
+	</div>
+	<div class="form-group">
+		<label for="_id-calc-form--phone-field">Телефон</label>
+		<input type="text" class="form-control" name="calc-form--phone-field" id="_id-calc-form--phone-field">
+		<span class="message">без этого тоже</span>
+	</div>
+	<div class="form-actions">
+		<button type="submit" class="btn btn-white"><span>Отправить</span></button>
+	</div>
+</form>

@@ -48,6 +48,41 @@ $(function () {
 		});
 	}
 
+	function getCallbackModal(modal, modalFilter) {
+		var url = '';
+		switch (modalFilter) {
+			case '#calc-form':
+				url = 'modals/calc-form.html';
+				break;
+			case '#request-form':
+				url = 'modals/request-form.html';
+				break;
+			case '#callback-form':
+				url = 'modals/callback-form.html';
+				break;
+			case '#price-info':
+				url = 'modals/price-info.html';
+				break;
+			case '#thank-notify':
+				url = 'modals/thank-notify.html';
+				break;
+		}
+		$.ajax({
+			url: url,
+			dataType: 'html',
+			error: function () {
+				console.warn('Проблема в получении данных для галереи');
+			},
+			success: function (data) {
+				$(modal).find('.modal-content').html(data);
+				renderIcons();
+				$(modal).modal({
+					backdropClass: 'modal-backdrop is-callback-backdrop'
+				});
+			}
+		});
+	}
+
 	function attachModalGalleryesNavs(modal) {
 		modal.on('click', '.gallery-prev-btn', function (event) {
 			event.preventDefault();
@@ -125,5 +160,38 @@ $(function () {
 		var targetID = $(this).closest('.js-clients-blocks').find('.block').index($(this));
 		$(modalTarget).data('flickityShowID', targetID);
 		getReviewsModal($(modalTarget));
+	});
+
+	// Collapsible video mobile sections
+	$('[data-toggle="collapsible-section"]').on('click', function (event) {
+		event.preventDefault();
+		var tabIndex = $(this).closest('.tab-content').index($(this).closest('.tab-pane'));
+
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active').next('.collapse').collapse('hide');
+			// make tab-content visible
+			$(this).closest('.tab-pane').addClass('in active');
+			if (tabIndex !== -1) {
+				$('.videos-nav').find('li').removeClass('active').get(tabIndex).addClass('active');
+			}
+		} else {
+			$('.inner-fullsize-context').find('.collapse').collapse('hide').end().find('[data-toggle="collapsible-section"].active').removeClass('active');
+			$(this).addClass('active').next('.collapse').collapse('show');
+			// make tab-content invisible
+			$(this).closest('.tab-pane').removeClass('in active');
+			if (tabIndex !== -1) {
+				$('.videos-nav').find('li').removeClass('active').get(tabIndex).addClass('active');
+			}
+			// update flickity
+			$(this).closest('.tab-pane').find('.flickity-enabled').flickity('resize');
+		}
+	});
+
+	// Videos modals
+	$('[data-toggle="modal-callback"]').on('click', function (event) {
+		event.preventDefault();
+		var href = $(this).attr('href');
+		var modal = $('#callback-modal');
+		getCallbackModal(modal, href);
 	});
 });

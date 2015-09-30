@@ -41,7 +41,7 @@
 	};
 	function renderSprite(path) {
 		var file = (path !== '' && typeof path !== 'undefined') ? path : 'img/sprites/svg_sprite.svg';
-		var revision = 1442902581;
+		var revision = 1443426265;
 		if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) {
 			document.createElement('svg');
 			document.createElement('use');

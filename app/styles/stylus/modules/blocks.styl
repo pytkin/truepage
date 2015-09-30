@@ -126,7 +126,7 @@
     .block {
       width 100%
       padding-bottom 0
-      font-size 1.2rem
+      font-size 1.4rem
       line-height 2.6rem
 
       &.is-half-screen {
@@ -417,6 +417,13 @@
           > span {
             border-bottom-color transparent
           }
+          &:hover {
+            color #ffeccc
+
+            > span {
+              border-bottom-color transparent
+            }
+          }
         }
       }
     }
@@ -594,7 +601,6 @@
 .cases-gallery {
   position relative
   width 100%
-  height 745px
   overflow hidden
 
   .reviews-gallery:not(.flickity-enabled) .gallery-cell ~ .gallery-cell {
@@ -640,6 +646,9 @@
       height 177px
       background-image url(../img/static/inner-promo-contacts-bg.png)
     }
+  }
+  &.is-videos-nav {
+    min-height 360px
   }
 
   h1 {
@@ -825,9 +834,13 @@
     float left
     background-color #fff
 
-    @media (max-width: 1280px) {
+    @media (max-width: 980px) {
       width 33.33334%
       padding-bottom 33.33334%
+
+      &:last-child {
+        display none
+      }
     }
 
     &:hover {
@@ -1082,4 +1095,488 @@
 .inner-fullsize-context {
   background-color #fff
   width 100%
+  color #1d5692
+  text-align center
+  font-size 1.6rem
+  line-height 2.4rem
+
+  @media (min-width: 980px) {
+    padding-top 75px
+
+    ul:not(.gallery-arrows) {
+      columns 380px 2
+      column-gap 120px
+
+      li {
+        min-width 380px
+      }
+    }
+    .collapse {
+      display block !important
+      height auto !important
+    }
+  }
+  @media (max-width: 980px) {
+    h3 {
+      font-size 3rem
+    }
+    .text-wrap {
+      width auto
+      padding 30px 25px 0
+
+      h2:first-child {
+        display none
+      }
+      .lead {
+        font-size 1.6rem
+        line-height 2.8rem
+      }
+      ul li {
+        display block
+        padding-left 0
+        padding-top 15px
+        margin-bottom 45px
+        text-align center
+
+        &:before {
+          top 0
+          left 50%
+          transform translateX(-50%)
+        }
+      }
+    }
+    .btn-calc {
+      font-size 1.2rem
+      white-space normal
+    }
+    .tab-pane {
+      display block !important
+      opacity 1
+      margin-bottom 1px
+
+      &:last-child {
+        margin-bottom -20px
+      }
+    }
+  }
+
+  .btn-calc {
+    margin-bottom 65px
+
+    &:after {
+      border-radius 0
+      transform scale(1.1) rotateY(-5deg) rotateX(-2deg) translateX(-8%) translateZ(-11px)
+    }
+
+    &:hover {
+      &:after {
+        transform scale(1.1) rotateY(3deg) rotateX(-2deg) translateX(5%) translateZ(-11px)
+      }
+    }
+  }
+
+  h2 {
+    margin 0 0 45px
+    font-size 6rem
+    line-height 1.2
+    text-transform uppercase
+    letter-spacing -0.01em
+  }
+  .text-wrap {
+    width 885px
+    margin 0 auto
+  }
+  .lead {
+    font-size 2.2rem
+    line-height 3.6rem
+
+    p {
+      margin-bottom 45px
+    }
+  }
+  h3 {
+    text-transform uppercase
+    font-size 3.6rem
+    margin 0
+  }
+  a:not(.btn) {
+    color brand-secondary
+
+    &:hover {
+      color brand-secondary
+    }
+  }
+  .section-header {
+    position relative
+    padding 40px 0 50px
+
+    &:before {
+      position absolute
+      content ''
+      background url(../img/static/crown-yellow.svg) no-repeat 0 0/23px 17px
+      width 23px
+      height 17px
+      top 0
+      left 50%
+      transform translateX(-50%)
+    }
+  }
+  .mobile-section-header {
+    color #fff !important
+    cursor pointer
+    position relative
+    display flex
+    flex-direction row
+    flex-wrap nowrap
+    justify-content center
+    align-items center
+    width 100%
+    background-color brand-primary
+    text-decoration none
+    height 106px
+    text-transform uppercase
+    font-family headings-font-family
+    font-size 1.8rem
+    letter-spacing -0.01em
+    transition background-color .3s ease-in-out
+
+    @media (min-width: 980px) {
+      display none
+    }
+
+    .icon,
+    [data-icon] {
+      position absolute
+      right 10px
+      top 50%
+      width 27px
+      height 18px
+      margin-top -9px
+      transition transform .3s ease-in-out
+    }
+    &:hover {
+      color #fff !important
+    }
+    &.active {
+      background-color #fff6e5
+      color brand-primary !important
+
+      .icon {
+        transform rotate(180deg)
+      }
+    }
+  }
+  ul:not(.gallery-arrows) {
+    display block
+    list-style none
+    margin 0 0 30px
+    padding 0
+
+    li {
+      position relative
+      display inline-block
+      text-align left
+      margin-bottom 25px
+      padding-left 30px
+
+      &:before {
+        position absolute
+        top 7px
+        left 0
+        display block
+        width 10px
+        height 7px
+        content ''
+        background url(../img/static/crown-blue.svg) no-repeat 0 0/10px 7px
+      }
+    }
+  }
+  .row {
+    text-align center
+
+    @media (min-width: 980px) {
+      display flex
+      flex-direction row
+      flex-wrap nowrap
+      justify-content space-between
+
+      .col {
+        width 380px
+        text-align left
+        flex-shrink 0
+        flex-grow 0
+      }
+    }
+
+    .col {
+      h3 {
+        margin-bottom 30px
+      }
+    }
+  }
+  .price-block {
+    min-height 165px
+    position relative
+    perspective 100px
+    padding-top 42px
+    margin-bottom 55px
+    text-align left
+    color #fff
+
+    @media (max-width: 768px) {
+      &.is-videos-price-block {
+        &:before {
+          transform rotateY(-1deg) rotateX(1deg) skewY(0deg) skewX(-4deg) rotateZ(0deg) translateY(-6px) translateX(-10px)
+        }
+      }
+    }
+    @media (max-width: 980px) {
+      padding-top 37px
+      padding-bottom 40px
+      margin-bottom 50px
+      text-align center
+
+      &.is-videos-price-block {
+        &:before {
+          transform rotateY(-1deg) rotateX(1deg) skewY(0deg) skewX(-4deg) rotateZ(0deg) translateY(-6px) translateX(-20px)
+        }
+        .btn:not(:only-child) {
+          display none
+        }
+      }
+      .chronometry-col {
+        padding-left 0
+        text-align center
+        width auto
+        float none
+        margin-right 0
+        margin-bottom 40px
+      }
+      .estimated-price-col {
+        float none
+        width auto
+        margin-right 0
+      }
+    }
+
+    &:before {
+      content ''
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      background-color brand-primary
+      transform rotateY(1deg) rotateX(1deg) skewY(2deg) skewX(2deg) rotateZ(-2deg) translateY(-12px) translateX(35px)
+      transform-style preserve-3d
+      z-index 1
+    }
+    &.is-videos-price-block {
+      &:before {
+        transform rotateY(-1deg) rotateX(1deg) skewY(0deg) skewX(-4deg) rotateZ(0deg) translateY(-6px) translateX(-35px)
+      }
+    }
+    &.is-single-btn {
+      .btn {
+        position relative
+        z-index 3
+        top 10px
+
+        @media (min-width: 980px) {
+          left 50%
+          transform translateX(-50%)
+        }
+      }
+    }
+
+    .descr-col {
+      position relative
+      z-index 2
+      float left
+      width 290px
+      line-height 2.4rem
+      padding-left 30px
+      margin-right 88px
+
+      p:last-child {
+        margin-bottom 0
+      }
+    }
+    .chronometry-col {
+      position relative
+      z-index 2
+      float left
+      width 220px
+      line-height 2.4rem
+      padding-left 60px
+      margin-right 128px
+
+      p {
+        margin-bottom 5px
+      }
+      strong {
+        text-transform uppercase
+        font-size 1.8rem
+        display block
+      }
+      @media (min-width: 980px) {
+        .icon,
+        [data-icon] {
+          position absolute
+          left 25px
+          top 0
+        }
+      }
+    }
+    .estimated-price-col {
+      position relative
+      z-index 2
+      float left
+      width 200px
+      margin-right 60px
+      line-height 2.4rem
+
+      p {
+        margin-bottom 5px
+      }
+      strong {
+        text-transform uppercase
+        font-size 1.8rem
+        display block
+        margin-bottom 5px
+      }
+      a {
+        display inline-block
+        text-decoration none
+        border-bottom 1px dashed
+        line-height 1
+        color #fff
+
+        &:hover {
+          color #fff
+          border-bottom-color transparent
+        }
+      }
+      @media (min-width: 980px) {
+        .icon,
+        [data-icon] {
+          position absolute
+          left -35px
+          top 0
+        }
+      }
+
+      & + .btn {
+        position relative
+        z-index 2
+      }
+    }
+  }
+}
+
+.work-examples {
+  margin-bottom -40px
+
+  @media (max-width: 980px) {
+    margin-bottom -20px
+  }
+
+  .block-header {
+    width 100%
+    max-width 885px
+    margin 0 auto
+    padding 0 20px
+    margin-bottom 50px
+  }
+  .block {
+    .icon,
+    [data-icon] {
+      color #fff
+    }
+  }
+}
+
+.videos-nav {
+  position absolute
+  bottom 0
+  left 0
+  width 100%
+  list-style none
+  margin 0
+  padding 0
+  text-transform uppercase
+  font-family headings-font-family
+  font-size 2.4rem
+  letter-spacing -0.01em
+  display none
+
+  @media (min-width: 980px) {
+    display block
+  }
+
+  a {
+    text-decoration none
+    display inline-block
+    height 132px
+    padding 32px 0
+    color #fff
+
+    &:hover {
+      color #fff
+    }
+  }
+  li {
+    position relative
+    display inline-flex
+    flex-wrap nowrap
+    flex-direction row
+    justify-content center
+    align-items center
+    margin 0 -7px
+    width 400px
+
+    @media (min-width: 980px) and (max-width: 1279px) {
+      width 305px
+
+      a {
+        font-size 1.8rem
+        height 100px
+        padding 25px 0
+      }
+      &:nth-child(2) {
+        width 309px
+      }
+    }
+
+    &.active {
+      z-index 3
+
+      .icon {
+        color #fff
+      }
+      a {
+        color brand-primary
+      }
+    }
+    &:nth-child(2) {
+      width 408px
+    }
+
+    .icon,
+    [data-icon] {
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      z-index 1
+      color brand-primary
+      width auto
+      height auto
+    }
+    span:not(.icon):not([data-icon]) {
+      position relative
+      z-index 2
+    }
+  }
 }
