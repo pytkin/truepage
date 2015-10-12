@@ -1,1 +1,95 @@
-!function(e){"use strict";function t(e,t){var i=t||{},a=i.size?"is-"+i.size:"",r="icon "+e+" "+a+(i["class"]||""),o='<svg class="icon__cnt"><use xlink:href="#'+e+'" /></svg>',s='<div class="'+r+'">'+n(o,r)+"</div>";return s}function n(e,t){return t.indexOf("spinner")>-1?'<div class="icon__spinner">'+e+"</div>":e}function i(t){var n=""!==t&&"undefined"!=typeof t?t:"img/sprites/svg_sprite.svg",i=1443770023;e.createElementNS&&e.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||(e.createElement("svg"),e.createElement("use"));var a,r,o="localStorage"in window&&null!==window.localStorage,s=function(){var t='<div style="display: none">'+r+"</div>";e.body.insertAdjacentHTML("afterbegin",t)},c=function(){e.body?s():e.addEventListener("DOMContentLoaded",s)};if(o&&parseInt(localStorage.getItem("inlineSVGrev"),10)===i&&(r=localStorage.getItem("inlineSVGdata")))return c(),!0;try{a=new XMLHttpRequest,a.open("GET",n,!0),a.onload=function(){a.status>=200&&a.status<400&&(r=a.responseText,c(),o&&(localStorage.setItem("inlineSVGdata",r),localStorage.setItem("inlineSVGrev",i)))},a.send()}catch(l){}}var a=function(n){for(var i=n?n.querySelectorAll("[data-icon]"):e.querySelectorAll("[data-icon]"),a=0;a<i.length;a++){var r=i[a],o=r.getAttribute("data-icon"),s={"class":r.className,size:r.getAttribute("data-size")};r.insertAdjacentHTML("beforebegin",t(o,s)),r.parentNode.removeChild(r)}};e.addEventListener("DOMContentLoaded",function(){i(),a()}),window.renderIcons=a}(window.document);
+(function (document) {
+	'use strict';
+
+	function icon(name, options) {
+		var optionsz = options || {};
+		var size    = optionsz.size ? 'is-' + optionsz.size : '';
+		var klass   = 'icon ' + name + ' ' + size + '' + (optionsz.class || '');
+
+		var iconz   =	'<svg class="icon__cnt">' +
+						'<use xlink:href="#' + name + '" />' +
+						'</svg>';
+
+		var html =  '<div class="' + klass + '">' +
+						wrapSpinner(iconz, klass) +
+					'</div>';
+
+		return html;
+	}
+	function wrapSpinner(html, klass) {
+		if (klass.indexOf('spinner') > -1) {
+			return '<div class="icon__spinner">' + html + '</div>';
+		} else {
+			return html;
+		}
+	}
+
+	var renderIcons = function (inst) {
+		var icons = inst ? inst.querySelectorAll('[data-icon]') : document.querySelectorAll('[data-icon]');
+
+		for (var i = 0; i < icons.length; i++) {
+			var currentIcon = icons[i];
+			var name        = currentIcon.getAttribute('data-icon');
+			var options = {
+				class:  currentIcon.className,
+				size:   currentIcon.getAttribute('data-size')
+			};
+
+			currentIcon.insertAdjacentHTML('beforebegin', icon(name, options));
+			currentIcon.parentNode.removeChild(currentIcon);
+		}
+	};
+	function renderSprite(path) {
+		var file = (path !== '' && typeof path !== 'undefined') ? path : 'img/sprites/svg_sprite.svg';
+		var revision = 1443770023;
+		if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) {
+			document.createElement('svg');
+			document.createElement('use');
+		}
+		var isLocalStorage = 'localStorage' in window && window.localStorage !== null;
+		var	request;
+		var	data;
+		var	insertIT = function () {
+			var sprite = '<div style="display: none">' + data + '</div>';
+			document.body.insertAdjacentHTML('afterbegin', sprite);
+		};
+		var insert = function () {
+			if (document.body) {
+				insertIT();
+			} else {
+				document.addEventListener('DOMContentLoaded', insertIT);
+			}
+		};
+
+		if (isLocalStorage && parseInt(localStorage.getItem('inlineSVGrev'), 10) === revision) {
+			data = localStorage.getItem('inlineSVGdata');
+			if (data) {
+				insert();
+				return true;
+			}
+		}
+		try {
+			request = new XMLHttpRequest();
+			request.open('GET', file, true);
+			request.onload = function () {
+				if (request.status >= 200 && request.status < 400) {
+					data = request.responseText;
+					insert();
+					if (isLocalStorage) {
+						localStorage.setItem('inlineSVGdata', data);
+						localStorage.setItem('inlineSVGrev', revision);
+					}
+				}
+			};
+			request.send();
+		} catch (e) {}
+	}
+
+	document.addEventListener('DOMContentLoaded', function () {
+		renderSprite();
+		renderIcons();
+	});
+
+	window.renderIcons = renderIcons;
+
+})(window.document);

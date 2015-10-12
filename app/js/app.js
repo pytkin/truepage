@@ -30,6 +30,12 @@ $(function () {
 				$(modal).modal({
 					backdropClass: 'modal-backdrop is-cases-modal-backdrop'
 				}).modal('handleUpdate');
+
+				if (modalFilter === 'video') {
+					$(modal).on('hidden.bs.modal', function () {
+						$(modal).find('.modal-content').empty();
+					});
+				}
 			}
 		});
 	}
