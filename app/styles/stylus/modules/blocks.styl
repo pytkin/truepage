@@ -120,8 +120,7 @@
   overflow hidden
 
   @media (max-width: 979px) {
-    width 320px
-    margin 0 auto
+    width 100%
 
     .block {
       width 100%
@@ -141,7 +140,7 @@
         .phone-number {
           margin-top -2px
         }
-        [data-type="call-request"] {
+        .btn[data-toggle="modal-callback"] {
           margin -12px 0
         }
       }
@@ -357,7 +356,7 @@
         .phone-number {
           font-size 2.4rem
         }
-        [data-type="call-request"] {
+        .btn[data-toggle="modal-callback"] {
           margin -19px 0 10px
         }
         [href^="mailto"] {
@@ -365,7 +364,7 @@
         }
       }
       @media (max-width: 1279px) and (min-width: 980px) {
-        [data-type="call-request"] {
+        .btn[data-toggle="modal-callback"] {
           margin -12px 0 -12px
         }
       }
@@ -385,7 +384,7 @@
         line-height 1
         text-transform uppercase
       }
-      [data-type="call-request"] {
+      .btn[data-toggle="modal-callback"] {
         display inline-block
         margin -22px 0 8px
       }
@@ -397,7 +396,8 @@
         > span {
           border-bottom 2px solid #ffbf4d
         }
-        &:hover {
+        &:hover,
+        &:focus {
           color #ffeccc
 
           > span {
@@ -411,23 +411,22 @@
         > span {
           border-bottom: 2px solid #ffbf4d
         }
-        &:hover {
-          color brand-primary
+        &:hover,
+        &:focus {
+          color #ffeccc
 
           > span {
             border-bottom-color transparent
-          }
-          &:hover {
-            color #ffeccc
-
-            > span {
-              border-bottom-color transparent
-            }
           }
         }
       }
     }
     &.is-reviews {
+      @media (max-width: 979px) {
+        .block-inner {
+          padding-bottom 70px
+        }
+      }
       @media (max-width: 1679px) and (min-width: 1280px) {
         .block-inner {
           padding-right 35px
@@ -440,6 +439,13 @@
       }
     }
     &.is-clients {
+      background-color darken(brand-secondary, 10%)
+
+      @media (max-width: 979px) {
+        .block-inner {
+          padding-bottom 70px
+        }
+      }
       @media (max-width: 1679px) and (min-width: 1280px) {
         .block-inner {
           padding-right 20px
@@ -572,6 +578,12 @@
       display inline-block
       transform translateX(-50%) translateY(-50%)
     }
+    img {
+      @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+        max-width 75%
+        height auto
+      }
+    }
   }
   .flickity-prev-next-button {
     top auto
@@ -602,6 +614,12 @@
   position relative
   width 100%
   overflow hidden
+
+  @media (max-width: 979px) {
+    .flickity-viewport {
+      min-height 100vw
+    }
+  }
 
   .reviews-gallery:not(.flickity-enabled) .gallery-cell ~ .gallery-cell {
     visibility hidden
@@ -796,6 +814,7 @@
 
   &.is-clients {
     .block {
+      position relative
       cursor default
 
       &:hover {
@@ -803,6 +822,23 @@
           &:before {
             opacity 0
           }
+        }
+      }
+      .review-modal-link {
+        position absolute
+        display block
+        bottom 15%
+        left 50%
+        width 29px
+        height 29px
+        color brand-primary
+        margin-left -15px
+
+        .icon-review-bubble,
+        [data-icon="icon-review-bubble"] {
+          width 29px
+          height 29px
+          opacity 1
         }
       }
     }
@@ -827,12 +863,19 @@
   }
 
   .block {
+    overflow hidden
     cursor pointer
     position relative
     width 25%
     padding-bottom 25%
     float left
     background-color #fff
+
+    iframe {
+      position absolute
+      top -999px
+      left -999px
+    }
 
     @media (max-width: 980px) {
       width 33.33334%
@@ -871,7 +914,7 @@
       img {
         display block
         max-width calc(100% - 70px)
-        max-height calc(100% - 70px)
+        height auto
       }
       .icon,
       [data-icon] {
@@ -999,11 +1042,11 @@
       width 39px
       height 39px
       line-height 39px
-      color #ffa300
     }
     .icon,
     [data-icon] {
       vertical-align -8px
+      color #ffa300 !important
     }
   }
 }
@@ -1028,7 +1071,7 @@
     height 318px
     background-color rgba(255,163,0,.9)
     z-index 2
-    padding 50px 35px 0
+    padding 40px 35px 0
     text-align center
     font-size 1.6rem
     line-height 2.6rem
@@ -1065,7 +1108,7 @@
       line-height 1
       text-transform uppercase
     }
-    [data-type="call-request"] {
+    .btn[data-toggle="modal-callback"] {
       display inline-block
       margin 0 0 8px
 
@@ -1123,6 +1166,7 @@
     .text-wrap {
       width auto
       padding 30px 25px 0
+      overflow hidden
 
       h2:first-child {
         display none
@@ -1322,15 +1366,21 @@
     margin-bottom 55px
     text-align left
     color #fff
+    backface-visibility hidden
 
     @media (max-width: 768px) {
       &.is-videos-price-block {
         &:before {
-          transform rotateY(-1deg) rotateX(1deg) skewY(0deg) skewX(-4deg) rotateZ(0deg) translateY(-6px) translateX(-10px)
+          transform skewY(1deg) skewX(0) rotateZ(0) translateY(-12px) translateX(5px)
         }
       }
     }
     @media (max-width: 980px) {
+      &:before {
+        transform skewY(1deg) skewX(0) rotateZ(0) translateY(-12px) translateX(5px)
+        backface-visibility hidden
+      }
+
       padding-top 37px
       padding-bottom 40px
       margin-bottom 50px
@@ -1356,6 +1406,13 @@
         float none
         width auto
         margin-right 0
+        margin-bottom 30px
+      }
+      .descr-col {
+        margin 0 auto 30px
+        float none
+        padding 0
+        width 220px
       }
     }
 

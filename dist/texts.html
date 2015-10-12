@@ -28,17 +28,22 @@
 				</div>
 			</div>
 		</div>
+		<div class="modal fade callback-modal" id="callback-modal">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
 		<div class="site-wrapper">
 			<header class="site-header">
 				<a href="index.html" class="logo"></a>
 				<nav class="main-nav">
 					<ul>
-						<li><span data-icon="icon-video"></span><a href="videos.html">Видео</a></li>
-						<li><span data-icon="icon-photo"></span><a href="photos.html">Фото</a></li>
-						<li class="active"><span data-icon="icon-texts"></span><span>Тексты</span></li>
-						<li><span data-icon="icon-eye"></span><a href="cases.html">Кейсы</a></li>
-						<li><span data-icon="icon-clients"></span><a href="clients.html">Клиенты</a></li>
-						<li><span data-icon="icon-contacts"></span><a href="contacts.html">Контакты</a></li>
+						<li><a href="videos.html"><span data-icon="icon-video"></span> Видео</a></li>
+						<li><a href="photos.html"><span data-icon="icon-photo"></span> Фото</a></li>
+						<li class="active"><span><span data-icon="icon-texts"></span> Тексты</span></li>
+						<li><a href="cases.html"><span data-icon="icon-eye"></span> Кейсы</a></li>
+						<li><a href="clients.html"><span data-icon="icon-clients"></span> Клиенты</a></li>
+						<li><a href="contacts.html"><span data-icon="icon-contacts"></span> Контакты</a></li>
 					</ul>
 				</nav>
 				<a href="#request-form" class="btn btn-default" data-toggle="modal-callback"><span>Закажи сейчас</span></a>
@@ -76,10 +81,11 @@
 								<p>Стоимость работы оценивается в знаках в зависимости от сложности задачи.</p>
 							</div>
 							<div class="estimated-price-col">
+								<span data-icon="icon-tag-bubble"></span>
 								<p>Ориентировочная стоимость</p>
 								<strong>800 р. за 1000 знаков</strong>
 							</div>
-							<a href="#" class="btn btn-white"><span>Отправить заявку</span></a>
+							<a href="#request-form" class="btn btn-white" data-toggle="modal-callback"><span>Отправить заявку</span></a>
 						</div>
 					</div>
 					<section class="work-examples">
@@ -113,6 +119,46 @@
 									</div>
 								</a>
 							</section>
+							<section class="mobile-inner-blocks">
+								<div class="block is-cases-videos">
+									<div class="block-inner">
+										<div class="cases-gallery" data-type="cases-gallery">
+											<div class="gallery-cell">
+												<div class="image-wrap">
+													<span data-icon="icon-play-action"></span>
+													<img src="img/temp/image-03.jpg" alt="" width="118" height="238">
+												</div>
+												<span class="descr">Сьемка бытовой техники для крупнейшей федеральной сети Pult.ru</span>
+											</div>
+											<div class="gallery-cell">
+												<div class="image-wrap">
+													<span data-icon="icon-play-action"></span>
+													<img src="img/temp/image-01.jpg" alt="" width="249" height="238">
+												</div>
+												<span class="descr">Сьемка бытовой техники для крупнейшей федеральной сети Pult.ru</span>
+											</div>
+											<div class="gallery-cell">
+												<div class="image-wrap">
+													<span data-icon="icon-play-action"></span>
+													<img src="img/temp/image-02.jpg" alt="" width="251" height="238">
+												</div>
+												<span class="descr">Сьемка бытовой техники для крупнейшей федеральной сети Pult.ru</span>
+											</div>
+											<div class="gallery-cell">
+												<div class="image-wrap">
+													<span data-icon="icon-play-action"></span>
+													<img src="img/temp/image-04.jpg" alt="" width="188" height="238">
+												</div>
+												<span class="descr">Сьемка бытовой техники для крупнейшей федеральной сети Pult.ru</span>
+											</div>
+										</div><!-- /.reviews-gallery -->
+										<ul class="gallery-arrows">
+											<li><a href="#" data-type="gallery-prev-handler"><span data-icon="icon-prev-arrow"></span></a></li>
+											<li><a href="#" data-type="gallery-next-handler"><span data-icon="icon-next-arrow"></span></a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
 						</div>
 					</section>
 				</section>
@@ -132,7 +178,7 @@
 					<div class="block is-contacts is-bg-primary text-center" data-id="6">
 						<div class="block-inner">
 							<h2>Контакты</h2>
-							<span class="phone-number">+7(495)955-765-96</span>
+							<span class="phone-number">+7 (495) 798-62-63</span>
 							<a href="#callback-form" class="btn btn-white" data-toggle="modal-callback"><span>Мы перезвоним</span></a><br>
 							<a href="mailto:info@videobaker.ru"><span>info@videobaker.ru</span></a>
 							<p>Москва, Дербеневская набережная, д.7, стр. 9. Деловой квартал "Новоспасский Двор".</p>
@@ -162,7 +208,7 @@
 							</div><!-- /.clients-gallery -->
 							<ul class="gallery-arrows">
 								<li><a href="#" data-type="gallery-prev-handler"><span data-icon="icon-prev-arrow"></span></a></li>
-								<li><a href="#" data-type="gallery-prev-handler"><span data-icon="icon-next-arrow"></span></a></li>
+								<li><a href="#" data-type="gallery-next-handler"><span data-icon="icon-next-arrow"></span></a></li>
 							</ul>
 						</div>
 					</div>

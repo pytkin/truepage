@@ -27,6 +27,7 @@
   -webkit-font-smoothing auto
   -moz-osx-font-smoothing auto
   perspective 100px
+  backface-visibility hidden
 
   &:after {
     position absolute
@@ -38,13 +39,14 @@
     padding 2px
     cursor pointer
     content ''
-    border 2px solid transparent
+    border 1px solid
     border-radius 10px
-    outline 1px solid transparent
+    border-color brand-primary transparent transparent brand-primary
     transition all .4s cubic-bezier(.16, .53, .15, .99)
     transform scale(1.1) rotateY(-6deg) rotateX(-5deg) translateX(-4%) translateZ(-11px)
     transform-style preserve-3d
     will-change transform, color
+    backface-visibility hidden
   }
   > span {
     position relative

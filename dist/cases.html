@@ -33,17 +33,22 @@
 				<div class="modal-content"></div>
 			</div>
 		</div>
+		<div class="modal fade callback-modal" id="callback-modal">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
 		<div class="site-wrapper">
 			<header class="site-header">
 				<a href="index.html" class="logo"></a>
 				<nav class="main-nav">
 					<ul>
-						<li><span data-icon="icon-video"></span><a href="videos.html">Видео</a></li>
-						<li><span data-icon="icon-photo"></span><a href="photos.html">Фото</a></li>
-						<li><span data-icon="icon-texts"></span><a href="texts.html">Тексты</a></li>
-						<li class="active"><span data-icon="icon-eye"></span><span>Кейсы</span></li>
-						<li><span data-icon="icon-clients"></span><a href="clients.html">Клиенты</a></li>
-						<li><span data-icon="icon-contacts"></span><a href="contacts.html">Контакты</a></li>
+						<li><a href="videos.html"><span data-icon="icon-video"></span> Видео</a></li>
+						<li><a href="photos.html"><span data-icon="icon-photo"></span> Фото</a></li>
+						<li><a href="texts.html"><span data-icon="icon-texts"></span> Тексты</a></li>
+						<li class="active"><span><span data-icon="icon-eye"></span> Кейсы</span></li>
+						<li><a href="clients.html"><span data-icon="icon-clients"></span> Клиенты</a></li>
+						<li><a href="contacts.html"><span data-icon="icon-contacts"></span> Контакты</a></li>
 					</ul>
 				</nav>
 				<a href="#request-form" class="btn btn-default" data-toggle="modal-callback"><span>Закажи сейчас</span></a>
@@ -56,104 +61,104 @@
 			<main class="site-content">
 				<section class="inner-promo">
 					<h1>Кейсы</h1>
-					<ul class="category-nav">
-						<li class="active"><a href="#"><span>Все</span></a></li>
-						<li><a href="#"><span>Фото</span></a></li>
-						<li><a href="#"><span>Видео</span></a></li>
+					<ul class="category-nav js-cases-grid-sort">
+						<li class="active"><a href="#" data-sort=""><span>Все</span></a></li>
+						<li><a href="#" data-sort=".photo"><span>Фото</span></a></li>
+						<li><a href="#" data-sort=".video"><span>Видео</span></a></li>
 					</ul>
 				</section>
 				<section class="inner-blocks js-cases-blocks">
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block video" data-target="#cases-modal" data-modal-type="video" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-play-action"></span>
 							<img src="img/temp/image-01.jpg" alt="" width="249" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block photo" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-plus-action"></span>
 							<img src="img/temp/image-02.jpg" alt="" width="251" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block video" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-play-action"></span>
 							<img src="img/temp/image-03.jpg" alt="" width="118" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block photo" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-plus-action"></span>
 							<img src="img/temp/image-04.jpg" alt="" width="188" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block video" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-play-action"></span>
 							<img src="img/temp/image-05.jpg" alt="" width="170" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block photo" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-plus-action"></span>
 							<img src="img/temp/image-06.jpg" alt="" width="171" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block video" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-play-action"></span>
 							<img src="img/temp/image-07.jpg" alt="" width="209" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block photo" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-plus-action"></span>
 							<img src="img/temp/image-08.jpg" alt="" width="219" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block video" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-play-action"></span>
 							<img src="img/temp/image-09.jpg" alt="" width="176" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block photo" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-plus-action"></span>
 							<img src="img/temp/image-10.jpg" alt="" width="189" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block video" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-play-action"></span>
 							<img src="img/temp/image-11.jpg" alt="" width="236" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block photo" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-plus-action"></span>
 							<img src="img/temp/image-12.jpg" alt="" width="120" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block video" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-play-action"></span>
 							<img src="img/temp/image-01.jpg" alt="" width="249" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block photo" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-plus-action"></span>
 							<img src="img/temp/image-02.jpg" alt="" width="251" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block video" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-play-action"></span>
 							<img src="img/temp/image-03.jpg" alt="" width="118" height="238">
 						</div>
 					</a>
-					<a class="block" data-target="#cases-modal" data-modal-type="all" href="#">
+					<a class="block photo" data-target="#cases-modal" data-modal-type="all" href="#">
 						<div class="block-inner">
 							<span data-icon="icon-plus-action"></span>
 							<img src="img/temp/image-04.jpg" alt="" width="188" height="238">

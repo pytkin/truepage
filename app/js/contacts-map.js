@@ -8,7 +8,7 @@ var beachMarker;
 function contactsMapInit() {
 	var mapOptions = {
 		zoom: 14,
-		center: new google.maps.LatLng(55.72198, 37.6509183),
+		center: new google.maps.LatLng(55.7554235, 37.6610504),
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 		disableDefaultUI: true,
 		draggable: false,
@@ -19,8 +19,8 @@ function contactsMapInit() {
 	image = 'img/static/crown.png';
 	beachMarker = new google.maps.Marker({
 		position: {
-			lat: 55.7234457,
-			lng: 37.6509298
+			lat: 55.7566,
+			lng: 37.6612
 		},
 		map: map,
 		icon: image

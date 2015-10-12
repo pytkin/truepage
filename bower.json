@@ -2,7 +2,9 @@
   "name": "truecontent",
   "dependencies": {
     "bootstrap": "~3.3.5",
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "isotope": "~2.2.2",
+    "fastclick": "~1.0.6"
   },
   "overrides": {
     "bootstrap": {

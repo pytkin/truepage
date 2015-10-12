@@ -147,15 +147,15 @@
       height 78px
       border-bottom 1px solid rgba(255,255,255,.1)
       font-weight bold
-      padding 20px 0
+      padding 22px 0
       text-decoration none
       text-transform uppercase
     }
     .icon,
     [data-icon] {
       color brand-primary
-      margin-right 10px
-      vertical-align -8px
+      vertical-align 9px
+      margin -17px 10px -16px 0
     }
   }
 }
@@ -167,7 +167,7 @@
   .modal-content {
     width 100%
     max-width 1200px
-    margin 30px
+    margin 30px 0
     min-height 800px
     padding 30px 34px
     background-color #fff
@@ -262,12 +262,19 @@
     right 40px
     left auto
   }
+  iframe {
+    margin 30px
+    width calc(100% - 80px)
+    display block
+    height 680px
+  }
 }
 
 .reviews-modal {
   .gallery-prev-btn,
   .gallery-next-btn {
-    top 65%
+    top 50%
+    transform translateY(-50%)
   }
   .modal-content {
     min-height 620px
@@ -384,6 +391,7 @@
     width 742px
     min-height 260px
     padding 70px 60px 60px
+    margin 30px 0
   }
   .close {
     position absolute

@@ -230,54 +230,58 @@ $(function () {
 		// these following methods are used to handle overflowing modals
 
 		Modal.prototype.handleUpdate = function () {
-				this.adjustDialog();
+			this.adjustDialog();
 		};
 
 		Modal.prototype.adjustDialog = function () {
-				var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight;
+			var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight;
 
-				this.$element.css({
-						paddingLeft:  !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
-						paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
-				});
+			this.$element.css({
+				paddingLeft:  !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
+				paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
+			});
+			$('.modal-open .modal').css('overflow-x', 'auto');
+			setTimeout(function () {
+				$('.modal-open .modal').css('overflow-x', '');
+			}, 100);
 		};
 
 		Modal.prototype.resetAdjustments = function () {
-				this.$element.css({
-						paddingLeft: '',
-						paddingRight: ''
-				});
+			this.$element.css({
+				paddingLeft: '',
+				paddingRight: ''
+			});
 		};
 
 		Modal.prototype.checkScrollbar = function () {
-				var fullWindowWidth = window.innerWidth;
-				if (!fullWindowWidth) { // workaround for missing window.innerWidth in IE8
-						var documentElementRect = document.documentElement.getBoundingClientRect();
-						fullWindowWidth = documentElementRect.right - Math.abs(documentElementRect.left);
-				}
-				this.bodyIsOverflowing = document.body.clientWidth < fullWindowWidth;
-				this.scrollbarWidth = this.measureScrollbar();
+			var fullWindowWidth = window.innerWidth;
+			if (!fullWindowWidth) { // workaround for missing window.innerWidth in IE8
+				var documentElementRect = document.documentElement.getBoundingClientRect();
+				fullWindowWidth = documentElementRect.right - Math.abs(documentElementRect.left);
+			}
+			this.bodyIsOverflowing = document.body.clientWidth < fullWindowWidth;
+			this.scrollbarWidth = this.measureScrollbar();
 		};
 
 		Modal.prototype.setScrollbar = function () {
-				var bodyPad = parseInt((this.options.container.css('padding-right') || 0), 10);
-				this.originalBodyPad = document.body.style.paddingRight || '';
-				if (this.bodyIsOverflowing) {
-						this.options.container.css('padding-right', bodyPad + this.scrollbarWidth);
-				}
+			var bodyPad = parseInt((this.options.container.css('padding-right') || 0), 10);
+			this.originalBodyPad = document.body.style.paddingRight || '';
+			if (this.bodyIsOverflowing) {
+				this.options.container.css('padding-right', bodyPad + this.scrollbarWidth);
+			}
 		};
 
 		Modal.prototype.resetScrollbar = function () {
-				this.options.container.css('padding-right', this.originalBodyPad);
+			this.options.container.css('padding-right', this.originalBodyPad);
 		};
 
 		Modal.prototype.measureScrollbar = function () { // thx walsh
-				var scrollDiv = document.createElement('div');
-				scrollDiv.className = 'modal-scrollbar-measure';
-				this.options.container.append(scrollDiv);
-				var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
-				this.options.container[0].removeChild(scrollDiv);
-				return scrollbarWidth;
+			var scrollDiv = document.createElement('div');
+			scrollDiv.className = 'modal-scrollbar-measure';
+			this.options.container.append(scrollDiv);
+			var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+			this.options.container[0].removeChild(scrollDiv);
+			return scrollbarWidth;
 		};
 
 		// MODAL PLUGIN DEFINITION

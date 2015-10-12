@@ -1,6 +1,9 @@
-/* global renderIcons */
+/* global renderIcons, FastClick */
 $(function () {
 	'use strict';
+
+	// Attach fastclick for mobiles (https://github.com/ftlabs/fastclick)
+	FastClick.attach(document.body);
 
 	function getCasesModal(modal, modalFilter) {
 		var url = '';
@@ -12,7 +15,7 @@ $(function () {
 				url = 'modals/cases-gallery-all.html';
 				break;
 			case 'video':
-				url = 'modals/cases-gallery-all.html';
+				url = 'modals/cases-gallery-video.html';
 				break;
 		}
 		$.ajax({
@@ -26,7 +29,7 @@ $(function () {
 				renderIcons();
 				$(modal).modal({
 					backdropClass: 'modal-backdrop is-cases-modal-backdrop'
-				});
+				}).modal('handleUpdate');
 			}
 		});
 	}
@@ -43,7 +46,7 @@ $(function () {
 				renderIcons();
 				$(modal).modal({
 					backdropClass: 'modal-backdrop is-reviews-modal-backdrop'
-				});
+				}).modal('handleUpdate');
 			}
 		});
 	}
@@ -91,7 +94,7 @@ $(function () {
 		}).on('click', '.gallery-next-btn', function (event) {
 			event.preventDefault();
 			var gallery = $(this).closest('.modal-content').find('.flickity-enabled').data('flickity');
-			gallery.previous(true);
+			gallery.next(true);
 		});
 	}
 
@@ -152,12 +155,15 @@ $(function () {
 			});
 		}
 		attachModalGalleryesNavs($(event.target));
+	}).on('shown.bs.modal', function (event) {
+		$(event.target).modal('handleUpdate');
 	});
 
 	// Clients modal
-	$('.js-clients-blocks').on('click', '.icon-review', function () {
-		var modalTarget = $(this).data('target');
-		var targetID = $(this).closest('.js-clients-blocks').find('.block').index($(this));
+	$('.js-clients-blocks').on('click', '[data-toggle="review-modal"]', function (event) {
+		event.preventDefault();
+		var modalTarget = $(this).attr('href');
+		var targetID = $(this).closest('.js-clients-blocks').find('.review-modal-link').index($(this).closest('.review-modal-link'));
 		$(modalTarget).data('flickityShowID', targetID);
 		getReviewsModal($(modalTarget));
 	});
@@ -187,11 +193,32 @@ $(function () {
 		}
 	});
 
-	// Videos modals
+	// Context modals
 	$('[data-toggle="modal-callback"]').on('click', function (event) {
 		event.preventDefault();
 		var href = $(this).attr('href');
 		var modal = $('#callback-modal');
+
+		// hide mobile nav
+		$('#mobile-nav-modal').modal('hide');
+		$('.mobile-nav-handler').removeClass('active');
+
 		getCallbackModal(modal, href);
 	});
+
+	// Isotope
+	$('.js-cases-blocks, .js-clients-blocks').isotope({
+		itemSelector: '.block'
+	});
+	$('.js-cases-grid-sort, .js-clients-grid-sort').on('click', 'a[data-sort]', function (event) {
+		var sortFilter = $(this).data('sort');
+		event.preventDefault();
+		$(this).closest('ul').find('li').removeClass('active').end().end().closest('li').addClass('active');
+		$('.js-cases-blocks, .js-clients-blocks').isotope({
+			filter: sortFilter
+		});
+	});
+	setTimeout(function () {
+		$('.js-cases-blocks, .js-clients-blocks').isotope('layout');
+	}, 100);
 });

@@ -30,7 +30,9 @@ gulp.task('jscodestyle', function () {
 	.pipe($.jshint())
 	.pipe($.jshint.reporter('jshint-stylish'))
 	.pipe($.if(!browserSync.active, $.jshint.reporter('fail')))
-	.pipe($.jscs('app/js/.jscsrc'))
+	.pipe($.jscs({fix: true}))
+    .pipe($.jscs.reporter())
+    .pipe($.jscs.reporter('fail'))
 	.pipe($.if(!browserSync.active, $.jshint.reporter('fail')))
 });
 
